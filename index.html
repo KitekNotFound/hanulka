@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You Hanulka</title>
+    <style>
+        body {
+            background-image: url('Hearts.jpeg'); /* Ścieżka do obrazu tła */
+            background-size: 155%; /* Dopasowanie obrazu tła */
+            background-position: center; /* Wyśrodkowanie obrazu tła */
+            background-repeat: no-repeat; /* Brak powtarzania obrazu tła */
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 12px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: relative;
+            
+}
+        .button1 {
+            background-color: #f8b8e4;
+            color: black;
+            border: 2px solid #d96aff;
+}
+
+        .button1:hover {
+            background-color: #d96aff;
+            color: #f8b8e4;
+}
+
+        h1, h2 {
+            margin-top: 50px;
+            color: #f8b8e4;
+            text-align: center;
+            
+        }
+
+        .content {
+            background: rgba(0, 0, 0, 0.5); /* Półprzezroczyste tło dla lepszej czytelności */
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 100px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function changeContent() {
+            document.getElementById('initial-content').classList.add('hidden');
+            document.getElementById('new-content').classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+
+<div id="initial-content" class="content">
+    <h1>Wszystkiego najlepszego!!!</h1>
+    <p>Dziekuje ze jestes ze mna juz rok.</p>
+    <button onclick="changeContent()" class="button button1">Dalej</button>
+</div>
+
+<div id="new-content" class="content hidden">
+    <h2>Bardzo szybko minal ten rok</h2>
+    <p>mam nadzieje ze kazdy bedzie tak lecial az do konca naszych dni.</p>
+</div>
+
+</body>
+</html>
