@@ -44,9 +44,6 @@
 
         h1, h2 {
             margin-top: 50px;
-            color: #f8b8e4;
-            text-align: center;
-            
         }
 
         .content {
@@ -56,29 +53,39 @@
             display: inline-block;
             margin-top: 100px;
         }
-
-        .hidden {
-            display: none;
-        }
     </style>
     <script>
+        let contentIndex = 0;
+        const headings = [
+            'Bardzo szybko minal ten rok',
+            'Mam nadzieje ze bedzie wiecej takich lat',
+            'Nowa Sekcja 3',
+            'Nowa sekcja 4'
+        ];
+        const paragraphs = [
+            'ciesze sie ze spedziłem go z tobą.',
+            'bo to najlepsze co mnie w zyciu spotkało',
+            'To jest nowy tekst 3.',
+            'to jest nowyt 4'
+        ];
+
         function changeContent() {
-            document.getElementById('initial-content').classList.add('hidden');
-            document.getElementById('new-content').classList.remove('hidden');
+            const headingElement = document.getElementById('dynamic-heading');
+            const paragraphElement = document.getElementById('dynamic-paragraph');
+            
+            headingElement.innerText = headings[contentIndex];
+            paragraphElement.innerText = paragraphs[contentIndex];
+            
+            contentIndex = (contentIndex + 1) % headings.length;
         }
     </script>
 </head>
 <body>
 
-<div id="initial-content" class="content">
-    <h1>Wszystkiego najlepszego!!!</h1>
-    <p>Dziekuje ze jestes ze mna juz rok.</p>
-    <button onclick="changeContent()" class="button button1">Dalej</button>
-</div>
-
-<div id="new-content" class="content hidden">
-    <h2>Bardzo szybko minal ten rok</h2>
-    <p>mam nadzieje ze kazdy bedzie tak lecial az do konca naszych dni.</p>
+<div class="content">
+    <h1 id="dynamic-heading">Wszystkiego najlepszego!!!</h1>
+    <p id="dynamic-paragraph">Dziekuje ze jestes ze mna juz rok.</p>
+    <button onclick="changeContent()" class="button button1">Więcej...</button>
 </div>
 
 </body>
